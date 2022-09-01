@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ToDoApp from '..src/components/ToDoApp.vue'
+import ToDoApp from '@/components/ToDoApp.vue'
 
 const routes = [
   {
@@ -9,17 +9,17 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/components/ToDoApp',
+    name: 'ToDoApp',
+    component: ToDoApp,
+    },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
-    path: '/ToDoApp',
-    name: 'ToDoApp',
-    component: ToDoApp,
   }
 ]
 

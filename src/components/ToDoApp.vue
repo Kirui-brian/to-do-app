@@ -63,6 +63,7 @@ export default {
       task: "",
       editedTask: null,
       tasks: [],
+      statuses: [],
     };
   },
   mounted() {
@@ -76,9 +77,9 @@ export default {
       return str.charAt(0).toUpperCase() + str.slice(1);
     },
     changeStatus(id) {
-      let newId = this.statuses.indexOf(this.tasks[id].status);
+      let newId = this.status.indexOf(this.tasks[id].status);
       if (++newId > 2) newId = 0;
-      this.tasks[id].status = this.statuses[newId];
+      this.tasks[id].status = this.status[newId];
     },
     deleteTask(id) {
       this.tasks.splice(id, 1);
