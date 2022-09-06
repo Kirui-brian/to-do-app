@@ -2,8 +2,12 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 const TaskSchema = new Schema({
-    name: String,
-    id: Number,
+    name: {
+        type: String,
+        require: true,
+        min: 3,
+        max: 20
+    },
     status: String,
 });
 

@@ -1,9 +1,9 @@
 {
     "tasks":[
-        {"name": "Update my logbook.", "id": 1, "status": "to-do"},
-        {"name": "Watch Youtube tutorials.", "id": 2, "status": "ongoing"},
-        {"name": "Work on my Vue projects.", "id": 3, "status": "done"},
-        {"name": "Clean the dishes.", "id": 4, "status": "done"}
+        {"name": "Update my logbook.", "status": "to-do"},
+        {"name": "Watch Youtube tutorials.", "status": "ongoing"},
+        {"name": "Work on my Vue projects.", "status": "done"},
+        {"name": "Clean the dishes.", "status": "done"}
     ]
 }
    

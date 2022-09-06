@@ -12,11 +12,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost/to-do-app', function () {
+mongoose.connect('mongodb://localhost:27017/to-do-app', function () {
     console.log('Connection has been made!');
 })
     .catch(err => {
-        console.error('App starting error:', err.stack);
+        console.error('Error starting app:', err.stack);
         process.exit(1);
     });
     
@@ -34,5 +34,5 @@ router.get('/', function (req, res) {
 const port = process.env.API_PORT || 8085;
 app.use('/', router);
 app.listen(port, function () {
-    console.log(`api running on port ${port}`);
+    console.log(`API running on port ${port}`);
 });
