@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
@@ -18,11 +20,14 @@
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "file-system": "^1.2.2",
     "font-awesome": "^4.7.0",
-    "mongoose": "^6.5.4",
+    "mongodb": "^4.9.1",
+    "mongoose": "^6.6.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.19",
+    "server": "^1.0.37",
     "vue": "^3.2.37",
     "vue-router": "^4.0.3"
   },
@@ -30,6 +35,8 @@
     "@fortawesome/fontawesome-free": "^6.1.2",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^8.23.0",
+    "nodemon": "^2.0.19"
   }
 }
