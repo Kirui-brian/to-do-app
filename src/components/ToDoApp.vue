@@ -67,20 +67,14 @@ export default {
       statuses: ["to-do", "ongoing", "done"],
     };
   },
-  // async created() {
-  //   try {
-  //     const res = await axios.get(`http://localhost:8085/tasks`);
-  //     this.tasks = res.data;
-  //   } catch (e) {
-  //     console.log(e.message);
-  //   }
-  // },
-  mounted() {
-      fetch('http://localhost:3000/tasks')
-        .then(res => res.json())
-        .then(data => this.tasks = data)
-        .catch(err => console.log(err.message))
-    },
+  async created() {
+    try {
+      const res = await axios.get(`http://localhost:8085/tasks`);
+      this.tasks = res.data;
+    } catch (err) {
+      console.log(err.message);
+    }
+  },
   methods: {
     capitalizeFirstChar(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);

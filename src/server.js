@@ -7,6 +7,7 @@ const fs = require('fs');
 
 const app = express();
 const router = express.Router();
+
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
@@ -22,17 +23,17 @@ mongoose.connect('mongodb://localhost:27017/to-do-app', function () {
     
 // Include controllers
 fs.readdirSync("controllers").forEach(function (file) {
-    if (file.substr(-3) == ".js") {
+    if (file.substring(-3) == ".js") {
         const route = require("./controllers/" + file)
         route.controller(app)
     }
 })
 
-router.get('/', function (req, res) {
+router.get('/tasks', function (req, res) {
     res.json({ message: 'API Initialized!' });
 });
 const port = process.env.API_PORT || 8085;
-app.use('/', router);
+app.use('/tasks', router);
 app.listen(port, function () {
     console.log(`API running on port ${port}`);
 });
